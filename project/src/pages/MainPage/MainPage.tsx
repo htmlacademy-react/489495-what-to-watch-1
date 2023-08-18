@@ -1,6 +1,16 @@
 import FilmCard from '../../components/filmCard/filmCard';
 
-export default function MainPage(): JSX.Element {
+type MainPageProps = {
+  title: string;
+  genre: string;
+  issueDate: string;
+};
+
+export default function MainPage({
+  title,
+  genre,
+  issueDate,
+}: MainPageProps): JSX.Element {
   return (
     <>
       <section className="film-card">
@@ -51,20 +61,26 @@ export default function MainPage(): JSX.Element {
             </div>
 
             <div className="film-card__desc">
-              <h2 className="film-card__title">The Grand Budapest Hotel</h2>
+              <h2 className="film-card__title">{title}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">Drama</span>
-                <span className="film-card__year">2014</span>
+                <span className="film-card__genre">{genre}</span>
+                <span className="film-card__year">{issueDate}</span>
               </p>
 
               <div className="film-card__buttons">
-                <button className="btn btn--play film-card__button" type="button">
+                <button
+                  className="btn btn--play film-card__button"
+                  type="button"
+                >
                   <svg viewBox="0 0 19 19" width="19" height="19">
                     <use xlinkHref="#play-s"></use>
                   </svg>
                   <span>Play</span>
                 </button>
-                <button className="btn btn--list film-card__button" type="button">
+                <button
+                  className="btn btn--list film-card__button"
+                  type="button"
+                >
                   <svg viewBox="0 0 19 20" width="19" height="20">
                     <use xlinkHref="#add"></use>
                   </svg>
@@ -135,26 +151,26 @@ export default function MainPage(): JSX.Element {
           </ul>
 
           <div className="catalog__films-list">
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
           </div>
 
           <div className="catalog__more">
