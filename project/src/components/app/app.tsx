@@ -19,38 +19,28 @@ function App({ movieTitle, movieGenre, issueYear }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.Main}>
-          <Route
-            index
-            element={
-              <MainPage
-                title={movieTitle}
-                genre={movieGenre}
-                issueDate={issueYear}
-              />
-            }
-          />
-          <Route path={AppRoute.SignIn} element={<SignIn />} />
-
-          <Route
-            path={AppRoute.MyList}
-            element={
-              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-                <MyList />
-              </PrivateRoute>
-            }
-          />
-
-          <Route path={AppRoute.Films}>
-            <Route index element={<Page404 />} />
-            <Route path={AppRoute.Film}>
-              <Route index element={<MoviePage />} />
-              <Route path={AppRoute.AddReview} element={<AddReview />} />
-            </Route>
-            <Route path="*" element={<Page404 />} />
-          </Route>
-          <Route path={AppRoute.Player} element={<Player />} />
-        </Route>
+        <Route
+          path={AppRoute.Main}
+          element={
+            <MainPage
+              title={movieTitle}
+              genre={movieGenre}
+              issueDate={issueYear}
+            />
+          }
+        />
+        <Route path={AppRoute.SignIn} element={<SignIn />} />
+        <Route
+          path={AppRoute.MyList}
+          element={
+            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+              <MyList />
+            </PrivateRoute>
+          }
+        />
+        <Route path={AppRoute.Film} element={<MoviePage />} />
+        <Route path={AppRoute.AddReview} element={<AddReview />} />
+        <Route path={AppRoute.Player} element={<Player />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>
